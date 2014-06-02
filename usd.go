@@ -4,8 +4,8 @@ package usd
 
 import "fmt"
 
-// USD is a type representing US dollars as an int64 with 1/1000 cent precision. This means that dollar values
-// in the range
+// USD is a type representing US dollars as an int64 with 1/1000 cent precision.
+// This means that dollar values in the range
 //     [-$92233720368547.75808, $92233720368547.75807]
 // (approx. ±$92 trillion) in increments of $0.00001 are represented precisely.
 type USD int64
@@ -15,6 +15,7 @@ const (
 	Dollar USD = 100 * Cent
 )
 
+// String formats d with a dollar sign ($) and rounded to the nearest cent.
 func (d USD) String() string {
 	s := ""
 	if d < 0 {
